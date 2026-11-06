@@ -58,9 +58,8 @@ class HopfieldBlock(nn.Module):
     """One modern-Hopfield retrieval step: patches of the logit map retrieve
     learned memory patterns."""
 
-    # Checkpoints trained before 2026-10-29 used patch_size=32, stride=16 and log_beta 2.0:
-    # smaller patches (512-dim instead of 2048-dim) and a larger beta make the retrieval less
-    # flat (with 2048 dims, cosine scores to random memories are all ~0)
+    # Stride at 1/2 works better most of the time. 
+    # The patch size, n_memories should be tuned. 
     def __init__(
         self,
         num_classes=2,
@@ -215,12 +214,12 @@ class ConvGRUBlock(nn.Module):
 
 
 class GRURefinementSegmentation(nn.Module):
-    """smp model + ConvGRUBlock applied n_iter times. With random_n_iter, every training
-    batch uses a random number of steps in 1..n_iter, so every step is trained to give a
-    good output (and the model is not tied to one T).
-    context_from_image: the block sees only the image (not the decoder features), so it has
-    to propagate information step by step, like a CRF. supervise_unary=False: with deep
-    supervision, no loss on step 0, so the base model gives a proposal that the block refines."""
+    #smp model + ConvGRUBlock applied n_iter times. With random_n_iter, every training
+    #batch uses a random number of steps in 1..n_iter, so every step is trained to give a
+    #good output (and the model is not tied to one T).
+    #context_from_image: the block sees only the image (not the decoder features), so it has
+    #to propagate information step by step, like a CRF. supervise_unary=False: with deep
+    #supervision, no loss on step 0, so the base model gives a proposal that the block refines.
 
     def __init__(
         self,
