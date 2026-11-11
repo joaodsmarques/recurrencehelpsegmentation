@@ -1,6 +1,6 @@
 # The Role of Recurrent Refinement in Medical Image Segmentation
 
-This repository presents the original implementation of the paper "The Role Of Recurrent Refinement In Medical Image Segmentation" by João D.S. Marques, David Calhas and Arlindo Oliveira.
+This repository presents the original implementation of the paper [The Role Of Recurrent Refinement In Medical Image Segmentation](https://arxiv.org/html/2611.09436v1) by João D.S. Marques, David Calhas and Arlindo Oliveira.
 
 ## Overview 📚
 While feed-forward segmentation networks perform well on large cohorts, they degrade in constrained clinical settings with few training samples and imaging artifacts. Human vi- sion, by contrast, remains robust under these conditions, a property partly attributed to the recurrent and feedback con- nectivity of the visual cortex, which refines visual information over time. Inspired by this, we append lightweight recurrent refinement blocks to segmentation backbones, namely Condi- tional Random Fields (CRFs), modern Hopfield networks and convolutional GRUs, and study their behaviour as the number of iterations increases at test time (including beyond the train- ing horizon). Evaluated on two open-source datasets, Kvasir- SEG and ARCADE, our recurrent blocks add less than 1.5% parameters and yield gains on clean data (up to 1.4 pp) and under noise (up to 17 pp) while reducing HD95.
