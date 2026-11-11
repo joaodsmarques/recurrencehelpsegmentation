@@ -19,12 +19,13 @@ python3 run_recurrent_segmentation.py
 Note: Make sure to add your Weights & Biases (wandb) API key in the main code or configure it using wandb login.
 
 ## Citation 💬
+```bibtex
 @misc{marques2026_recurrentRefinementSegmentation,
-      title={The Role Of Recurrent Refinement In Medical Image Segmentation}, 
-      author={Joao D. S. Marques and David Calhas and Arlindo L. Oliveira},
-      year={2026},
-      eprint={2611.09436},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2611.09436}, 
+  title         = {The Role Of Recurrent Refinement In Medical Image Segmentation}, 
+  author        = {Joao D. S. Marques and David Calhas and Arlindo L. Oliveira},
+  year          = {2026},
+  eprint        = {2611.09436},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {[https://arxiv.org/abs/2611.09436](https://arxiv.org/abs/2611.09436)}
 }
